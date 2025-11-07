@@ -24,11 +24,12 @@ public class ItemService {
 
 	 // 特定アイテムの取得
 	 public Item getItem(String itemId){
-		 for(int i=0; i < allItems.size(); ) {
+		 for(int i=0; i < allItems.size(); i++) {
 			  if( allItems.get(i).getItemId().equals(itemId)) {
 				  return (Item)allItems.get(i);
 			  }
 		 }
+		 return null;
 	 }
 
 }
