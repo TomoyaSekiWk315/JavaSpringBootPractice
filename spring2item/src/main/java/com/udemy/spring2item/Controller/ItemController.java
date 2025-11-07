@@ -1,0 +1,23 @@
+package com.udemy.spring2item.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.udemy.spring2item.model.Item;
+import com.udemy.spring2item.service.ItemService;
+
+@RestController
+public class ItemController {
+	
+	@Autowired
+	private ItemService itemService;
+
+	@GetMapping("/items")
+	public List<Item> getAllItems(){
+	
+		return itemService.getAllItems();
+	}
+}
