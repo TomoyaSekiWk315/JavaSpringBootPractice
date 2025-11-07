@@ -1,5 +1,6 @@
 package com.udemy.spring2item.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,12 +11,12 @@ import com.udemy.spring2item.model.Item;
 @Service
 public class ItemService {
 	
-	List<Item> allItems = Arrays.asList(
+	List<Item> allItems = new ArrayList<> (Arrays.asList(
 			new Item("10001","ネックレス","ジュエリー"),
 			new Item("10002","パーカー","ファッション"),
 			new Item("10003","フェイスクリーム","ビューティー"),
 			new Item("10004","サプリメント","ヘルス"),
-			new Item("10005","ブルーベリー","フード"));
+			new Item("10005","ブルーベリー","フード")));
 
 	// すべてのアイテムを取得
 	 public List<Item> getAllItems(){
@@ -30,6 +31,10 @@ public class ItemService {
 			  }
 		 }
 		 return null;
+	 }
+	 
+	 public void addItem(Item item) {
+		 allItems.add(item);
 	 }
 
 }
